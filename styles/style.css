@@ -455,7 +455,7 @@ footer .information .desc p {
 
 footer .information ul li{
     list-style: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #111111;
 }
 
@@ -466,9 +466,13 @@ footer .information ul li:first-child{
 }
 
 footer .information ul li a {
-    text-decoration: underline;
-    text-decoration-color: #9D9D9D;
+    text-decoration: none;
     color: #111111;
+    align-items: center;
+}
+
+footer .information ul li a svg{
+    margin-right: 5px;
 }
 
 footer .information ul li i {
@@ -927,10 +931,10 @@ footer .information .end {
 
 
     .desktop {
-        display: none;
+        display: none !important; 
     }
     .mobile {
-        display: block;
+        display: block !important;
     }
 
     @font-face {
@@ -961,19 +965,18 @@ footer .information .end {
     }
     
     .menu {
-        height: 100%; /* Specify a height */
-        width: 0; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Stay on top */
+        height: 100%;
+        width: 0; 
+        position: fixed; 
+        z-index: 1; 
         top: 0;
         left: 0;
-        background-color: #111; /* Black*/
-        overflow-x: hidden; /* Disable horizontal scroll */
-        padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.4s; /* 0.5 second transition effect to slide in the sidepanel */
+        background-color: #111; 
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.4s; 
       }
       
-      /* The sidepanel links */
       .menu a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
@@ -983,12 +986,10 @@ footer .information .end {
         transition: 0.3s;
       }
       
-      /* When you mouse over the navigation links, change their color */
       .menu a:hover {
         color: #f1f1f1;
       }
       
-      /* Position and style the close button (top right corner) */
       .menu .closebtn {
         position: absolute;
         top: 0;
@@ -997,7 +998,6 @@ footer .information .end {
         margin-left: 50px;
       }
       
-      /* Style the button that is used to open the sidepanel */
       .openbtn {
         font-size: 20px;
         cursor: pointer;
@@ -1078,10 +1078,10 @@ footer .information .end {
     }
     
     .photo {
-        display: flex; /* İçeriği yatay hizalamak için */
-        justify-content: center; /* İçeriği merkeze hizalamak için */
-        align-items: center; /* İçeriği dikeyde merkeze hizalamak için */
-        height: 100%; /* İçeriğin yüksekliğini belirtmek için */
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        height: 100%; 
         width: 50%;
     }
     
@@ -1301,8 +1301,9 @@ footer .information .end {
     
     .information .socialmedia {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
     .information img {
         fill: white;
@@ -1314,7 +1315,7 @@ footer .information .end {
         margin-right: auto;
     }
     footer hr {
-        width: 95%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1377,6 +1378,8 @@ footer .information .end {
       }
       
       .faq .baslik hr {
+        margin-left: auto;
+        margin-right: auto;
         width: 90%;
         color: green;
         border: 2px solid green; 
