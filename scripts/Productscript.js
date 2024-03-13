@@ -51,11 +51,6 @@ angular.module('myApp', [])
   }
         // Diğer ürünler buraya eklenebilir
     ];
-
-    $scope.redirectToProduct = function(product) {
-      // Ürün bilgilerini alarak yönlendirme işlemi
-      $location.path('/product/' + product.name); // Örneğin ürün adını URL'de kullanarak yönlendirme yapıyorum
-  };
 }]);
 
 

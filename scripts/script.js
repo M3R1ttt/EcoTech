@@ -20,6 +20,19 @@ $(document).ready(function() {
         $(".c5").slideToggle();
     })
 
+
+
+    $(".check").change(function(){
+        if ($(this).is(":checked")) { 
+            $(".gonder").prop("disabled", false); 
+            $(".gonder").removeClass("deactive").addClass("active"); 
+        } else {
+            $(".gonder").prop("disabled", true); 
+            $(".gonder").removeClass("active").addClass("deactive");
+        }
+    }); 
+
+
     // Tüm kartları seç
 const kartlar = document.querySelectorAll('.kart');
 
