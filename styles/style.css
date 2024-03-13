@@ -931,7 +931,7 @@ footer .information .end {
     padding: 10px;
 }
 .sepetCol {
-    width: 70%;
+    width: 90%;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -941,10 +941,11 @@ footer .information .end {
 .sepetItems {
     width: 50%;
     height: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
 }
 .sepetConfirmation {
-    border-left: 1px solid black;
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -954,7 +955,7 @@ footer .information .end {
 }
 .sepetConfirmation input {
     border: 1px solid transparent;
-    width: 80%;
+    width: 96%;
     margin: 10px
 }
 .sepetConfirmation input[type="email"], .sepetConfirmation input[type="text"] {
@@ -999,16 +1000,19 @@ footer .information .end {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 90%;
+    width: 85%;
 }
 .siparis {
     width: 100%;
+    margin-left: 12%;
 }
 .isimContainer {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .isimContainer input {
-    width: 38%;
+    width: 100%;
 }
 .active {
     background-color: green;
@@ -1032,6 +1036,19 @@ footer .information .end {
     position: fixed;
     border: 1px solid black;
     width: 100%;
+    bottom: 0;
+}
+.sepetCol form {
+    width: 50%;
+}
+.itemsName {
+    white-space: nowrap;
+}
+.itemsMobile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    justify-content: space-between;
 }
 
 
@@ -1707,29 +1724,27 @@ footer .information .end {
 .sepetWrapper {
     margin-top: 150px;
     display: flex;
+    justify-content: center;
     width: 100%;
-    height: 500px;
+    height: fit-content;
     padding: 10px;
 }
 .sepetCol {
-    border: 1px solid black;
-    width: 70%;
+    width: 90%;
     padding: 10px;
     display: block;
     justify-content: center;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
     height: fit-content;
+    border-radius: 10px;
 }
 .sepetItems {
     width: 100%;
-    height: fit-content;
-}
-.sepetItems ul {
-    max-height: 200px;
+    height: 100%;
 }
 .sepetConfirmation {
     border: none;
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1739,7 +1754,7 @@ footer .information .end {
 }
 .sepetConfirmation input {
     border: 1px solid transparent;
-    width: 100%;
+    width: 96%;
     margin: 10px
 }
 .sepetConfirmation input[type="email"], .sepetConfirmation input[type="text"] {
@@ -1747,13 +1762,13 @@ footer .information .end {
     background-color: #dbdbdb;
     border-radius: 10px;
     padding: 10px;
-    width: 95%;
 }
 .sepetConfirmation input[type="submit"] {
     background-color: green;
     padding: 10px 20px;
     color: white;
     border-radius: 10px;
+    width: 80%;
 }
 .onay {
     width: 100%;
@@ -1764,7 +1779,6 @@ footer .information .end {
 .onay label {
     width: 90%;
     text-align: left;
-    font-size: 15px;
 }
 .onay input[type="checkbox"] {
     width: 5%;
@@ -1777,24 +1791,32 @@ footer .information .end {
 .sepetItems ul {
     overflow-y: scroll;
 }
-.sepetItems ul li div{
-    font-size: 5px;
-}
 .sepetItems hr {
     width: 100%;
 }
 .items {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 85%;
+}
+.itemsMobile {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
 }
 .siparis {
-    width: 100%;
+    padding: 10px;
+    width: 95%;
+    margin-left: 15%;
 }
 .isimContainer {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .isimContainer input {
     width: 100%;
@@ -1819,10 +1841,15 @@ footer .information .end {
 }
 .sepetTutarı {
     position: fixed;
-    border: 1px solid black;
+    width: 90%;
+    bottom: 0;
+}
+.sepetCol form {
     width: 100%;
 }
-
-
+.itemsName {
+    white-space: nowrap;
+    display: block;
+}
 
 }

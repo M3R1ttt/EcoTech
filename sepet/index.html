@@ -42,140 +42,48 @@
     <main>
         <div class="sepetWrapper">
             <div class="sepetCol">
-                <div class="sepetItems">
+                <div class="sepetItems" ng-app="myApp" ng-controller="ProductController">
                     <ul>
-                        <li class="items">
+                        <li class="items" ng-repeat="item in cart">
                             <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
+                                <h4>{{item.name}}</h4>
                             </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
+                            <div class="itemsMobile">
+                                <div class="itemsAdet" style="display: flex; text-align: center;">
+                                    <input type="number" value="{{item.quantity}}" style="width: 50px; height: 30px; font-size: 20px; text-align: center;" min="1" max="99"><h4 style="margin-left: 3px;">Adet</h4>
+                                </div>
+                                <div class="itemsPrice">
+                                    <h5>{{item.price}}</h5>
+                                </div>
                             </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
+                            <hr>
                         </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
-                        <li class="items">
-                            <div class="itemsName">
-                                <h4>Kokulu Mum</h4>
-                            </div>
-                            <div class="itemsAdet">
-                                <h5>X Adet</h5>
-                            </div>
-                            <div class="itemsPrice">
-                                <h5>500 TL</h5>
-                            </div>
-                        </li>
-                        <hr>
+                        
                     </ul>
                     <div class="sepetTutari">
-                        Sepet Tutarı : X TL
+                        Sepet Tutarı : {{getTotalPrice()}} TL
                     </div>
                 </div>
-                <div class="sepetConfirmation">
-                    <div class="inputContainer">
-                        <div class="isimContainer">
-                            <input type="text" placeholder="İsim" required>
-                            <input type="text" placeholder="Soyisim" required>
+                <form action="/islemler/siparisVer.php" method="POST">
+                    <div class="sepetConfirmation">
+                        <div class="inputContainer">
+                            <div class="isimContainer">
+                                <input type="text" placeholder="İsim" name="isim" required>
+                                <input type="text" placeholder="Soyisim" name="soyisim" required>
+                            </div>
+                            <input type="email" placeholder="Email" name="email" required>
+                            <input type="text" placeholder="Telefon Numarası" name="telefon" required>
                         </div>
-                        <input type="email" placeholder="Email" required>
-                        <input type="text" placeholder="Telefon Numarası" required>
-                    </div>
-                    <div class="siparis">
-                        <div class="onay">
-                            <input type="checkbox" id="check" class="check">
-                            <label for="check">Sepeti Onaylıyorum</label>
+                        <div class="siparis">
+                            <div class="onay">
+                                <input type="checkbox" id="check" class="check">
+                                <label for="check">Sepeti Onaylıyorum</label>
+                            </div>
+                            <input type="submit" value="Sipariş Ver" class="gonder deactive">
                         </div>
-                        <input type="submit" value="Sipariş Ver" class="gonder deactive">
-                    </div>
-                </div>                
+                    </div>   
+                </form>
             </div>
-
         </div>
     </main>
     <footer>
@@ -185,5 +93,6 @@
     <script src="/scripts/language.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/mobilescripts.js"></script>
+    <script src="/scripts/Productscript.js"></script>
 </body>
 </html>
