@@ -75,8 +75,9 @@ angular.module('myApp', []).controller('ProductController', ['$scope', '$http', 
       localStorage.setItem('cart', JSON.stringify($scope.cart)); // Sepeti yerel depolamaya kaydet
       console.log('Sepete eklenen ürünler:', $scope.cart); // Sepete eklenen ürünleri konsola yazdır
       
-      // Toplam fiyatı güncelle
+      // Toplam fiyatı ve sipariş metnini güncelle
       $scope.updateTotalPrice();
+      $scope.updateOrderText();
   };
 
   // Sepetin toplam fiyatını güncelleyen fonksiyon
@@ -87,17 +88,15 @@ angular.module('myApp', []).controller('ProductController', ['$scope', '$http', 
       }
   };
 
-// Sipariş metnini oluşturan fonksiyon
-$scope.updateOrderText = function() {
-  $scope.orderText = '';
-  for (var i = 0; i < $scope.cart.length; i++) {
-      $scope.orderText += $scope.cart[i].name + ': ' + $scope.cart[i].quantity + ' adet\n';
-  }
-};
+  // Sipariş metnini oluşturan fonksiyon
+  $scope.updateOrderText = function() {
+      $scope.orderText = '';
+      for (var i = 0; i < $scope.cart.length; i++) {
+          $scope.orderText += $scope.cart[i].name + ': ' + $scope.cart[i].quantity + ' adet\n';
+      }
+  };
 
-
-
-  // Sepetin toplam fiyatını ve sipariş metnini güncelle
+  // Sepetin toplam fiyatını ve sipariş metnini başlangıçta güncelle
   $scope.updateTotalPrice();
   $scope.updateOrderText();
 
