@@ -7,45 +7,66 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ürünler</title>
-  <link rel="stylesheet" href="../styles/productstyle.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon">
   <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/productstyle.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
 <body ng-app="myApp" ng-controller="ProductController">
     <header>
         <script>
-            $(function(){
-                $('header').load('/parts/header_desktop.html');
+                if (window.innerWidth > 850) {
+                    $(function(){
+                        $('header').load('/parts/header_desktop.html');
+                    });
+                }
+                else {
+                    $(function(){
+                    $('header').load('/parts/header_mobile.html');
+                });
+                }
+                
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 850) {
+                    $(function(){
+                        $('header').load('/parts/header_desktop.html');
+                    });
+                }
+                else {
+                    $(function(){
+                    $('header').load('/parts/header_mobile.html');
+                });
+                }
             });
           </script>
     </header>
     <section>
-        <div class="featured-area pt-100 pb-70">
-            <div class="container ">
-                <div class="tab featured-tab-area">
-                    <div class="row filtre">
-                        <div class="col">
-                            <ul class="tabs active">
-                                <li class="">
-                                    <a href="#">
+        <div class="featured-area">
+            <div class="">
+                <div class="featured-tab-area">
+                    <div class="filtre">
+                        <div class="">
+                            <ul class="tabs">
+                                <li class="active">
+                                    <a href="#" key="45">
                                         Hepsi
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="#">
+                                    <a href="#" key="46">
                                         Kokulu
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="#">
+                                    <a href="#" key="47">
                                         Dekoratif
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="#">
+                                    <a href="#" key="48">
                                         Doğal
                                     </a>
                                 </li>
@@ -53,24 +74,26 @@
                         </div>
                     </div>
                     <div>
-                      <div class="row productsWrapper" ng-app="myApp" ng-controller="ProductController">
-                        <div class="col-lg-3 col-md-6" ng-repeat="product in products">
+                      <div class="productsWrapper" ng-app="myApp" ng-controller="ProductController">
+                        <div ng-repeat="product in products">
                             <div class="featured-item">
-                                <div class="featured-item-img">
+                                <div class="featured-item-details">
                                     <a href="#">
                                         <img ng-src="{{product.imageUrl}}" alt="Images">
+                                        <h3>{{product.name}}</h3>
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="#">{{product.name}}</a></h3>
                                     <hr>
                                     <div class="content-in">
                                         <h4>{{product.price}}</h4>
-                                        <span>({{product.rating}})<i class="fa fa-star"></i></span>
+                                        <span>({{product.rating}})<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                          </svg></span>
                                     </div>
                                     <hr>
                                     <div class="featured-content-list">
-                                        <button type="button" ng-click="addToCart(product)" class="default-btn border-radius-5">Sepete Ekle</button>
+                                        <button type="button" ng-click="addToCart(product)" class="add" key="49">Sepete Ekle</button>
                                     </div>
                                 </div>
                             </div>
@@ -81,36 +104,32 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="show-cart table">
-     
-                    </table>
-                    <div class="grand-total">Total price: ₹<span class="total-cart"></span></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer>
         <script>
-            $(function(){
-              $('footer').load('/parts/footer_desktop.html');
+            if (window.innerWidth > 850) {
+                $(function(){
+                    $('footer').load('/parts/footer_desktop.html');
+                });
+            }
+            else {
+                $(function(){
+                $('footer').load('/parts/footer_mobile.html');
             });
-          </script>
+            }
+            
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 850) {
+                $(function(){
+                    $('footer').load('/parts/footer_desktop.html');
+                });
+            }
+            else {
+                $(function(){
+                $('footer').load('/parts/footer_mobile.html');
+            });
+            }
+        });
+      </script>
     </footer>
 
     <script src="../scripts/Productscript.js"></script>
@@ -118,6 +137,7 @@
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Bootstrap JS -->
+    <script src="/scripts/mobilescripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

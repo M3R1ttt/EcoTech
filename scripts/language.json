@@ -44,7 +44,13 @@
       "40": "Bize Ulaşın!",
       "41": "Bizimle İletişime Geçin!",
       "42": "Geri dönüşleriniz bizim için çok değerli!",
-      "43": "Sponsorlar"
+      "43": "Sponsorlar",
+      "44": "Duyurular",
+      "45": "Hepsi",
+      "46": "Kokulu",
+      "47": "Dekoratif",
+      "48": "Doğal",
+      "49": "Sepete Ekle"
     },
     "en": {
       "0": "Home",
@@ -90,7 +96,14 @@
       "40": "Contact Us!",
       "41": "Contact Us!",
       "42": "Your feedback is very valuable to us!",
-      "43": "Sponsors"
+      "43": "Sponsors",
+      "44": "Announcements",
+      "45": "All",
+      "46": "Fragrant",
+      "47": "Decorative",
+      "48": "Natural",
+      "49": "Add to Cart"
+      
     },
     "ita": {
       "0": "Home",
@@ -136,7 +149,13 @@
       "40": "Contattaci!",
       "41": "Contattaci!",
       "42": "Il vostro feedback è molto prezioso per noi!",
-      "43": "Sponsorizzatori"
+      "43": "Sponsorizzatori",
+      "44": "Annunci",
+      "45": "Tutti",
+      "46": "Fragrante",
+      "47": "Decorativo",
+      "48": "Naturale",
+      "49": "Aggiungi al carrello"
     }
   }
   
