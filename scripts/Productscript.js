@@ -115,4 +115,38 @@ angular.module('myApp', []).controller('ProductController', ['$scope', '$http', 
       });
   };
 
+
+    // Sepetten belirli bir ürünü kaldırma fonksiyonu
+    $scope.adetDusur = function(item) {
+        var index = $scope.cart.indexOf(item);
+        if (index !== -1) {
+            if ($scope.cart[index].quantity > 1) {
+                $scope.cart[index].quantity--; // Ürünün miktarını 1 azalt
+            } else {
+                $scope.cart.splice(index, 1); // Ürünü sepette tamamen kaldır
+            }
+            localStorage.setItem('cart', JSON.stringify($scope.cart)); // Sepeti güncelle
+            console.log('Sepetten kaldırılan ürün:', item);
+            
+            // Toplam fiyatı ve sipariş metnini güncelle
+            $scope.updateTotalPrice();
+            $scope.updateOrderText();
+        }
+    };
+
+    // Sepetten ürün kaldırma fonksiyonu
+    $scope.removeFromCart = function(item) {
+        var index = $scope.cart.indexOf(item);
+        if (index !== -1) {
+            $scope.cart.splice(index, 1); // Sepetten ürünü kaldır
+            localStorage.setItem('cart', JSON.stringify($scope.cart)); // Sepeti güncelle
+            console.log('Sepetten kaldırılan ürün:', item);
+            
+            // Toplam fiyatı ve sipariş metnini güncelle
+            $scope.updateTotalPrice();
+            $scope.updateOrderText();
+        }
+    };
+
+
 }]);

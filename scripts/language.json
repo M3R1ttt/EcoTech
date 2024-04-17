@@ -50,7 +50,10 @@
       "46": "Kokulu",
       "47": "Dekoratif",
       "48": "Doğal",
-      "49": "Sepete Ekle"
+      "49": "Sepete Ekle",
+      "50": "Sponsorlar",
+      "51": "Adres:",
+      "52": "Telefon:"
     },
     "en": {
       "0": "Home",
@@ -102,8 +105,10 @@
       "46": "Fragrant",
       "47": "Decorative",
       "48": "Natural",
-      "49": "Add to Cart"
-      
+      "49": "Add to Cart",
+      "50": "Sponsors",
+      "51": "Address:",
+      "52": "Telephone:"
     },
     "ita": {
       "0": "Home",
@@ -155,7 +160,10 @@
       "46": "Fragrante",
       "47": "Decorativo",
       "48": "Naturale",
-      "49": "Aggiungi al carrello"
+      "49": "Aggiungi al carrello",
+      "50": "Sponsor",
+      "51": "Indirizzo",
+      "52": "Telefono:"
     }
   }
   

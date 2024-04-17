@@ -35,7 +35,7 @@ body {
 /* HEADER */
 
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     display: flex;
@@ -138,7 +138,6 @@ header .logo span {
 /* SLOGAN // GİRİŞ KISMI */
 
 .giris {
-    margin-top: 5%;
     padding: 80px 50px 100px 50px;
     background-image: url("https://ecotechgencbizz.com/images/slogan2.png");
     background-repeat: no-repeat;
@@ -490,132 +489,11 @@ footer .information .end {
     text-align: center;
 }
 
-
-@media screen and (max-width: 1500px) {
-
-    .giris {
-        position: relative;
-        padding: 80px 50px 100px 50px;
-        background-image: url("../images/slogan2.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    
-    .giris .desc {
-        margin-left: 10%;
-    }
-    
-    .giris .desc h1 {
-        font-size: 50px;
-        margin-bottom: 10px;
-        color: white;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        max-width: 60%;
-    }
-    
-    .giris .desc h5 {
-        color: white;
-        font-size: 20px;
-        margin-bottom: 20px;
-        max-width: 40%;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 400;
-    }
-    
-    .giris .desc button {
-        height: auto;
-        width: 400px;
-        background-color: rgb(255, 255, 255);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: rgb(0, 0, 0);
-        padding: 20px;
-        border: 0;
-        z-index: 2;
-        font-size: 30px;
-        font-weight: 600;
-    }
-    
-    .desktop footer .contact {
-        padding: 40px;
-        background-color: #FAFFEC;
-        background-image: url(../images/footer.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    
-    footer .contact .photo {
-        width: 30vw;
-    }
-    
-    footer .contact .input-container{
-        height: 25vw;
-        margin-left: 5vw;
-        width: 35%;
-    }
-
-    
-    footer .contact .desc p {
-        max-width: 40vw;
-    }
-    
-    footer .contact .desc h1 {
-        width: 40vw;
-        margin-bottom: 20px;
-        font-size: 3vw;
-        max-width: 60vw;
-        
-    }
-    
-    footer img {
-        margin-left: 15%;
-    }
-    
-    footer input{
-        height: 50px;
-        margin-bottom: 20px;
-        width: 30vw;
-        color: black;
-        background: none;
-        border: 1px solid rgb(0, 0, 0);
-        text-align: left;
-    }
-
-    footer textarea{
-        height: 150px;
-        margin-bottom: 20px;
-        width: 30vw;
-        color: black;
-        background: none;
-        border: 1px solid rgb(0, 0, 0);
-        text-align: left;
-    }
-    
-    
-    footer button {
-        color: white;
-        border: 0;
-        width: 30vw;
-        height: 50px;
-        background-color: #121212;
-    }
-
-}
-
-
-
-
-.hakkimizda {
-    margin-top: 8%;
-}
-
 .hakkimizda .bizkimiz {
     align-items: center;
-    margin-top: 100px;
     display: flex;
     margin-bottom: 160px;
+    margin-top: 40px;
     justify-content: center;
 }
 
@@ -820,10 +698,6 @@ footer .information .end {
   
   /* İLETİŞİM SAYFASI */
 
-  .iletisimpage {
-    margin-top: 6%;
-  }
-
   .adres {
     display: flex;
     justify-content: space-between;
@@ -996,11 +870,25 @@ footer .information .end {
     width: 100%;
 }
 .items {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
     flex-wrap: wrap;
-    width: 85%;
+    width: 95%;
+}
+.itemsInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.itemChange button{
+    border: 1px solid black;
+    background: none;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: clamp(5px, 15px, 40px);
+}
+.itemChange {
+    display: block;
+    align-items: center;
+    justify-content: center;
 }
 .siparis {
     width: 100%;
@@ -1034,7 +922,6 @@ footer .information .end {
 }
 .sepetTutarı {
     position: fixed;
-    border: 1px solid black;
     width: 100%;
     bottom: 0;
 }
@@ -1047,10 +934,134 @@ footer .information .end {
 .itemsMobile {
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 50%;
     justify-content: space-between;
 }
+.itemInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.itemsChange button{
+    background: none;
+    padding: 5px 10px;
+}
+@media screen and (max-width: 1200px) {
+    .itemsInfo {
+        display: block;
+    }
+}
+@media screen and (max-width: 1500px) {
 
+    .giris {
+        position: relative;
+        padding: 80px 50px 100px 50px;
+        background-image: url("../images/slogan2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    .giris .desc {
+        margin-left: 10%;
+    }
+    
+    .giris .desc h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 60%;
+    }
+    
+    .giris .desc h5 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 20px;
+        max-width: 40%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 400;
+    }
+    
+    .giris .desc button {
+        height: auto;
+        width: 400px;
+        background-color: rgb(255, 255, 255);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: rgb(0, 0, 0);
+        padding: 20px;
+        border: 0;
+        z-index: 2;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    .desktop footer .contact {
+        padding: 40px;
+        background-color: #FAFFEC;
+        background-image: url(../images/footer.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    footer .contact .photo {
+        width: 30vw;
+    }
+    
+    footer .contact .input-container{
+        height: 25vw;
+        margin-left: 5vw;
+        width: 35%;
+    }
+
+    
+    footer .contact .desc p {
+        max-width: 40vw;
+    }
+    
+    footer .contact .desc h1 {
+        width: 40vw;
+        margin-bottom: 20px;
+        font-size: 3vw;
+        max-width: 60vw;
+        
+    }
+    
+    footer img {
+        margin-left: 15%;
+    }
+    
+    footer input{
+        height: 50px;
+        margin-bottom: 20px;
+        width: 30vw;
+        color: black;
+        background: none;
+        border: 1px solid rgb(0, 0, 0);
+        text-align: left;
+    }
+
+    footer textarea{
+        height: 150px;
+        margin-bottom: 20px;
+        width: 30vw;
+        color: black;
+        background: none;
+        border: 1px solid rgb(0, 0, 0);
+        text-align: left;
+    }
+    
+    
+    footer button {
+        color: white;
+        border: 0;
+        width: 30vw;
+        height: 50px;
+        background-color: #121212;
+    }
+
+}
 
   @media screen and (max-width: 850px) {
 
@@ -1086,7 +1097,7 @@ footer .information .end {
         background-color: white;
         display: flex;
         z-index: 999;
-        position: fixed;
+        position: sticky;
         width: 100%;
         justify-content: space-between;
         align-items: center;
@@ -1152,7 +1163,6 @@ footer .information .end {
         background-repeat: no-repeat;
         display: block;
         height: 300px;
-        margin-top: 10%;
         padding: 30px;
     }
     
@@ -1272,10 +1282,6 @@ footer .information .end {
     .s p {
         font-size: 2vw;
         margin: 0px 15px 5px 15px;
-    }
-    
-    .hakkimizda {
-        margin-top: 12%;
     }
     
     .bizkimiz, .vizyon, .misyon {
@@ -1459,11 +1465,6 @@ footer .information .end {
         text-align: center;
     }
     
-    
-    .iletisimpage {
-        margin-top: 10%;
-    }
-    
     .aciklama {
         text-align: center;
     }
@@ -1552,7 +1553,6 @@ footer .information .end {
     
     .hakkimizda .bizkimiz {
         align-items: center;
-        margin-top: 100px;
         display: block;
         margin-bottom: 50px;
         justify-content: center;
@@ -1630,9 +1630,6 @@ footer .information .end {
     
     /* İLETİŞİM */
 
-    .iletisimpage {
-        margin-top: 10%;
-    }
     
     .aciklama {
         text-align: center;
